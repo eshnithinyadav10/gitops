@@ -29,3 +29,11 @@ affinity:
           labelSelector:
             matchLabels:
               app.kubernetes.io/name: podinfo
+
+securityContext:
+  runAsNonRoot: true
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop: [ALL]
+  seccompProfile:
+    type: RuntimeDefault
