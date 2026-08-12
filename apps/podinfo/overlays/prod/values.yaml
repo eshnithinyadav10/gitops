@@ -17,7 +17,6 @@ autoscaling:
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 80
 podDisruptionBudget:
-  enabled: true
   minAvailable: 1
 service:
   metricsPort: 9797
