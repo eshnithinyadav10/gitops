@@ -16,6 +16,11 @@ autoscaling:
   maxReplicas: 6
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 80
+hpa:
+  enabled: true
+  maxReplicas: 6
+  cpu: 70
+  memory: 256Mi
 podDisruptionBudget:
   minAvailable: 1
 service:
