@@ -5,3 +5,5 @@ resources:
   - secrets.yaml
   - infra.yaml
   - issuers.yaml
+  - podinfo-dev.yaml
+  - podinfo-prod.yaml

@@ -1,0 +1,11 @@
+replicaCount: 1
+logLevel: debug
+ui:
+  message: "Hello from GitOps - DEV"
+  color: "#34495e"
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+  limits:
+    memory: 128Mi

@@ -1,0 +1,25 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: podinfo-prod
+  namespace: flux-system
+spec:
+  interval: 10m
+  path: ./apps/podinfo/overlays/prod
+  prune: true
+  timeout: 10m
+  dependsOn:
+    - name: infra
+    - name: issuers
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
+  healthChecks:
+    - apiVersion: helm.toolkit.fluxcd.io/v2
+      kind: HelmRelease
+      name: podinfo
+      namespace: podinfo-prod

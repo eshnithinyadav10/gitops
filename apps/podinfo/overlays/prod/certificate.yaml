@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: podinfo-prod-tls
+  namespace: podinfo-prod
+spec:
+  secretName: podinfo-prod-tls
+  dnsNames:
+    - podinfo-prod.192.168.49.2.nip.io
+  issuerRef:
+    name: demo-ca
+    kind: ClusterIssuer
+  privateKey:
+    algorithm: ECDSA
+    size: 256

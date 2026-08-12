@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: podinfo
+  namespace: podinfo-prod
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 1m
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - podinfo-prod.192.168.49.2.nip.io
+      secretName: podinfo-prod-tls
+  rules:
+    - host: podinfo-prod.192.168.49.2.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: podinfo
+                port:
+                  number: 9898
