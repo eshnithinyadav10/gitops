@@ -7,3 +7,4 @@ resources:
   - issuers.yaml
   - podinfo-dev.yaml
   - podinfo-prod.yaml
+  - podinfo-automation.yaml
