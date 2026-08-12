@@ -1,4 +1,4 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: podinfo
@@ -7,7 +7,7 @@ spec:
   image: ghcr.io/stefanprodan/podinfo
   interval: 5m
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
   name: podinfo-dev
@@ -19,7 +19,7 @@ spec:
     semver:
       range: ">=6.0.0 <7.0.0"
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
   name: podinfo-prod
@@ -31,7 +31,7 @@ spec:
     semver:
       range: ">=6.14.0 <7.0.0"
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: podinfo-dev
@@ -57,7 +57,7 @@ spec:
     paths:
       - ./apps/podinfo/overlays/dev/values.yaml
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: podinfo-prod
