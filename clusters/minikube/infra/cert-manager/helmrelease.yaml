@@ -21,6 +21,3 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  rollback:
-    remediation:
-      retries: 2
