@@ -19,6 +19,7 @@ spec:
       name: cert-manager-values
   upgrade:
     remediation:
+      strategy: rollback
       retries: 3
   rollback:
     remediation:

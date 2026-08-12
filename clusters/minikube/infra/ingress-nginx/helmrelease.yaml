@@ -19,10 +19,8 @@ spec:
       name: ingress-nginx-values
   upgrade:
     remediation:
+      strategy: rollback
       retries: 3
-  rollback:
-    remediation:
-      retries: 2
   driftDetection:
     mode: enabled
     ignore:
