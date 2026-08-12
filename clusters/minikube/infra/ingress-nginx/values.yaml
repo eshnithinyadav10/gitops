@@ -1,0 +1,26 @@
+controller:
+  replicaCount: 2
+  minReadySeconds: 5
+  updateStrategy:
+    type: RollingUpdate
+  service:
+    type: LoadBalancer
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      memory: 512Mi
+  autoscaling:
+    enabled: false
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: false
+  podSecurityContext:
+    fsGroup: 101
+  containerSecurityContext:
+    runAsUser: 101
+    capabilities:
+      drop: [ALL]
+      add: [NET_BIND_SERVICE]
