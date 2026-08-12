@@ -32,6 +32,8 @@ affinity:
 
 securityContext:
   runAsNonRoot: true
+  runAsUser: 65534
+  runAsGroup: 65534
   allowPrivilegeEscalation: false
   capabilities:
     drop: [ALL]
