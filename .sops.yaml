@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: clusters/minikube/secrets/.*\.ya?ml
+    encrypted_regex: ^(data|stringData)$
+    age: age1tvhktpsgu2p8h9rl4cmyyhf0x866cu27uxxx9javr43vxqnh492slrj5rr
+  - path_regex: (apps|infra)/.*/secrets/.*\.ya?ml
+    encrypted_regex: ^(data|stringData)$
+    age: age1tvhktpsgu2p8h9rl4cmyyhf0x866cu27uxxx9javr43vxqnh492slrj5rr
