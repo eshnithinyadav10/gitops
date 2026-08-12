@@ -4,7 +4,6 @@ resources:
   - ../../base
   - namespace.yaml
   - ingress.yaml
-namespace: podinfo-dev
 patches:
   - target:
       group: source.toolkit.fluxcd.io
@@ -14,6 +13,14 @@ patches:
       - op: replace
         path: /metadata/namespace
         value: flux-system
+  - target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
+      kind: HelmRelease
+    patch: |-
+      - op: replace
+        path: /metadata/namespace
+        value: podinfo-dev
 configMapGenerator:
   - name: podinfo-values
     namespace: podinfo-dev
