@@ -21,7 +21,6 @@ spec:
     remediation:
       retries: 3
   rollback:
-    enable: true
     remediation:
       retries: 2
   driftDetection:
